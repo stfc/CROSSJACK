@@ -1,0 +1,11 @@
+[Unit]
+Description=Cgroups Exporter Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/slurm/etc-r9/CROSSJACK/exporters/cgroup_exporter --config.paths /slurm
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
